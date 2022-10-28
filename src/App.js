@@ -1,14 +1,17 @@
-import './App.css';
+import '../App.css';
 import Navbar from './components/Navbar';
 import  Footer  from './components/Footer';
-import Products from '/home/murilo/case_react/src/components/Footer.js';
-import { Route, Routes } from 'react-router-dom';
+import Products from './components/Products';
+import Login from './components/Login';
+import { useState } from 'react';
 
 function App() {
+  const [token, setToken] = useState(localStorage.getItem("userToken") ?? null)
+
   return <div className='App'>
       <Navbar />
-      <Products/>
-      < Footer/>
+      {token ? <Products/>: <login token={token} setToken={setToken} />}
+      <Footer/>
     
      </div>;
 }

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import '../App.css'
 import axios from "axios";
 
@@ -33,7 +33,9 @@ const Products = () => {
                     <h1>Loading...</h1>
                 </div>
             )}
-            {data.map((product)=>{
+
+
+            {data.map((product)=>(
                 <div key={product.id} className="card">
                     <div><img src={product.image} alt="#"/></div>
                     <div className="card-description">
@@ -41,9 +43,8 @@ const Products = () => {
                         <h6>{`Price: ${product.price}`}</h6>
                         <h6>{`Category: ${product.category}`}</h6>
                     </div>                
-                    
                 </div>
-            })}
+            ))}
         </div>
     )
     
