@@ -1,23 +1,17 @@
 import './App.css';
 import Navbar from './components/Navbar';
-import Home from './components/Home';
-import Products from './components/Product';
-import Product from './components/Product';
-import Footer from './components/Footer';
+import  Footer  from './components/Footer';
+import Products from '/home/murilo/case_react/src/components/Footer.js';
 import { Route, Routes } from 'react-router-dom';
 
 function App() {
-  return (
-    <>
+  return <div className='App'>
       <Navbar />
-      <Routes>
-        <Route exact path="/" element={<Home />} />
-        <Route exact path="/products" element={<Products />} />
-        <Route exact path="/product/:id" element={<Product />} />
-      </Routes>
-      <Footer />
-    </>
-  );
+      <Products/>
+      < Footer/>
+    
+     </div>;
 }
+
 
 export default App;
